@@ -5,7 +5,34 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  googleId  String?  @unique
+  avatarUrl String?
+  createdAt DateTime @default(now())
+
+  transactions Transaction[]
+}
+
+model Transaction {
+  id          String    @id @default(cuid())
+  title       String
+  value       Decimal
+  type        String
+  createdAt   DateTime  @default(now())
+  expiratedAt DateTime?
+  userId      String
+
+  user User @relation(fields: [userId], references: [id])
 }
