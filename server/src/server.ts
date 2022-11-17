@@ -4,6 +4,8 @@ import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 
+import { authRoutes } from './routes/auth'
+
 dotenv.config()
 
 async function bootstrap() {
@@ -19,11 +21,7 @@ async function bootstrap() {
         secret: process.env.SECRET_KEY,
     })
 
-    fastify.get('/', () => {
-        return {
-            result: 'Hello world',
-        }
-    })
+    await fastify.register(authRoutes)
 
     await fastify.listen({
         port: process.env.SERVER_PORT,
