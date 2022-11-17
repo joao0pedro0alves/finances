@@ -1,9 +1,9 @@
-import { HStack, Text, VStack, useTheme, Button, Box } from 'native-base'
-import { Feather } from '@expo/vector-icons'
-import { MotiView } from 'moti'
+import {HStack, Text, VStack, useTheme, Button, Box} from 'native-base'
+import {Feather} from '@expo/vector-icons'
+import {MotiView} from 'moti'
 
 export function Header() {
-    const { colors, sizes } = useTheme()
+    const {colors, sizes} = useTheme()
 
     return (
         <Box bgColor="purple.500" h="20">

@@ -1,17 +1,17 @@
-import { NativeBaseProvider, StatusBar } from "native-base"
+import {NativeBaseProvider, StatusBar} from 'native-base'
 
 import {
     useFonts,
     Roboto_700Bold,
     Roboto_400Regular,
     Roboto_500Medium,
-} from "@expo-google-fonts/roboto"
+} from '@expo-google-fonts/roboto'
 
-import { Loading } from "./src/components/Loading"
+import {Loading} from './src/components/Loading'
 
-import { THEME } from "./src/styles"
-import { Home } from "./src/screens/Home"
-import { SafeAreaView } from "react-native-safe-area-context"
+import {THEME} from './src/styles'
+import {Home} from './src/screens/Home'
+import {SafeAreaView} from 'react-native-safe-area-context'
 
 import 'react-native-reanimated'
 

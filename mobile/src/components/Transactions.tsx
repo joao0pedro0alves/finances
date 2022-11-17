@@ -1,8 +1,8 @@
-import { FlatList } from 'native-base'
+import {FlatList} from 'native-base'
 
-import { ITransaction } from '../@types'
+import {ITransaction} from '../@types'
 
-import { Transaction } from './Transaction'
+import {Transaction} from './Transaction'
 
 interface TransactionsProps {
     data: ITransaction[]
@@ -13,7 +13,7 @@ export function Transactions({data}: TransactionsProps) {
         <FlatList
             data={data}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Transaction data={item} />}
+            renderItem={({item}) => <Transaction data={item} />}
             showsVerticalScrollIndicator={false}
         />
     )

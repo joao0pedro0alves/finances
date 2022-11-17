@@ -1,11 +1,11 @@
-import { Center, Icon, Text } from 'native-base'
-import { Fontisto } from '@expo/vector-icons'
+import {Center, Icon, Text} from 'native-base'
+import {Fontisto} from '@expo/vector-icons'
 
-import { useAuth } from '../hooks/useAuth'
-import { Button } from '../components/Button'
+import {useAuth} from '../hooks/useAuth'
+import {Button} from '../components/Button'
 
 export function SignIn() {
-    const { signIn, isUserLoading } = useAuth()
+    const {signIn, isUserLoading} = useAuth()
 
     return (
         <Center backgroundColor="gray.900" flex={1} p={7}>

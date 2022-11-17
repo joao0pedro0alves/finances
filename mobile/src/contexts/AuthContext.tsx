@@ -6,7 +6,7 @@ import * as WebBrowser from 'expo-web-browser'
 import {GOOGLE_OAUTH_CLIENT_ID} from '@env'
 import {api} from '../services/api'
 
-WebBrowser.maybeCompleteAuthSession();
+WebBrowser.maybeCompleteAuthSession()
 
 interface UserProps {
     name: string
@@ -31,19 +31,17 @@ export function AuthContextProvider({children}: AuthProviderProps) {
 
     const [request, response, promptAsync] = Google.useAuthRequest({
         clientId: GOOGLE_OAUTH_CLIENT_ID,
-        redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
-        scopes: ['profile', 'email']
+        redirectUri: AuthSession.makeRedirectUri({useProxy: true}),
+        scopes: ['profile', 'email'],
     })
 
     async function signIn() {
         try {
             setIsUserLoading(true)
             await promptAsync()
-
         } catch (error) {
             console.log(error)
             throw error
-            
         } finally {
             setIsUserLoading(true)
         }
@@ -52,24 +50,27 @@ export function AuthContextProvider({children}: AuthProviderProps) {
     async function signInWithGoogle(access_token: string) {
         try {
             setIsUserLoading(true)
-            
-            const tokenResponse = await api.post('/users', { access_token })
-            api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`
+
+            const tokenResponse = await api.post('/users', {access_token})
+            api.defaults.headers.common[
+                'Authorization'
+            ] = `Bearer ${tokenResponse.data.token}`
 
             const userInfoResponse = await api.get('/me')
             setUser(userInfoResponse.data.user)
-
         } catch (error) {
             console.log(error)
-            throw error;
-
+            throw error
         } finally {
             setIsUserLoading(false)
         }
     }
 
     useEffect(() => {
-        if (response?.type === 'success' && response.authentication?.accessToken) {
+        if (
+            response?.type === 'success' &&
+            response.authentication?.accessToken
+        ) {
             signInWithGoogle(response.authentication.accessToken)
         }
     }, [response])

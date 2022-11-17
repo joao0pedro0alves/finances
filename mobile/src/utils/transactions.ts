@@ -1,4 +1,4 @@
-import { ITransaction } from '../@types'
+import {ITransaction} from '../@types'
 
 export const transactions: ITransaction[] = [
     {
@@ -6,14 +6,14 @@ export const transactions: ITransaction[] = [
         title: 'Depósito Vale',
         value: 1800,
         createdAt: new Date(),
-        type: 'deposit'
+        type: 'deposit',
     },
     {
         id: '1',
         title: 'Fatura Cartão Mais',
         value: 259,
         createdAt: new Date(),
-        type: 'expense'
+        type: 'expense',
     },
     {
         id: '2',
@@ -21,7 +21,7 @@ export const transactions: ITransaction[] = [
         value: 735,
         createdAt: new Date(),
         expiratedAt: new Date(),
-        type: 'expense'
+        type: 'expense',
     },
     {
         id: '3',
@@ -29,7 +29,7 @@ export const transactions: ITransaction[] = [
         value: 217,
         createdAt: new Date(),
         expiratedAt: new Date(),
-        type: 'expense'
+        type: 'expense',
     },
     {
         id: '4',
@@ -37,7 +37,7 @@ export const transactions: ITransaction[] = [
         value: 70,
         createdAt: new Date(),
         expiratedAt: new Date(),
-        type: 'expense'
+        type: 'expense',
     },
     {
         id: '5',
@@ -45,6 +45,6 @@ export const transactions: ITransaction[] = [
         value: 200,
         createdAt: new Date(),
         expiratedAt: new Date(),
-        type: 'expense'
+        type: 'expense',
     },
 ]

@@ -2,16 +2,15 @@ import {extendTheme} from 'native-base'
 
 export const THEME = extendTheme({
     colors: {
-
         purple: {
-            500: '#8000FF'
+            500: '#8000FF',
         },
 
         white: '#FFFFFF',
 
         overlay: {
-            500: 'rgba(255,255,255,0.5)'
-        }
+            500: 'rgba(255,255,255,0.5)',
+        },
     },
     fonts: {
         heading: 'Roboto_700Bold',
