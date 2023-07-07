@@ -8,7 +8,7 @@ export function SignIn() {
     const {signIn, isUserLoading} = useAuth()
 
     return (
-        <Center backgroundColor="gray.900" flex={1} p={7}>
+        <Center backgroundColor="purple.500" flex={1} p={7}>
             <Text
                 fontSize={20}
                 fontFamily="heading"

@@ -47,4 +47,12 @@ export const transactions: ITransaction[] = [
         expiratedAt: new Date(),
         type: 'expense',
     },
+    {
+        id: '10',
+        title: 'Veterinário',
+        value: 200,
+        createdAt: new Date(),
+        expiratedAt: new Date(),
+        type: 'expense',
+    },
 ]

@@ -4,6 +4,7 @@ export const THEME = extendTheme({
     colors: {
         purple: {
             500: '#8000FF',
+            700: '#660AC2',
         },
 
         white: '#FFFFFF',
